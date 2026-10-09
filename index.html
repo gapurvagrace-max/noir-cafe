@@ -1,1 +1,282 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NOIR Café — artisan coffee, slow mornings, and unforgettable evenings.">
+  <title>NOIR CAFÉ | Coffee, Reimagined</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #11100e;
+      --panel: #1b1916;
+      --cream: #f3eadb;
+      --muted: #aaa195;
+      --gold: #c69c65;
+      --line: #39332b;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--cream);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px 8%;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .logo {
+      font-family: "Playfair Display", serif;
+      font-size: 1.6rem;
+      letter-spacing: 5px;
+    }
+
+    .logo span { color: var(--gold); }
+
+    .nav-links { display: flex; gap: 28px; font-size: .85rem; }
+    .nav-links a:hover { color: var(--gold); }
+
+    .hero {
+      min-height: 82vh;
+      display: flex;
+      align-items: center;
+      padding: 90px 8%;
+      background:
+        linear-gradient(90deg, rgba(17,16,14,.98) 0%, rgba(17,16,14,.77) 48%, rgba(17,16,14,.2) 100%),
+        url("https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=1800&q=85") center/cover;
+    }
+
+    .hero-content { max-width: 650px; }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: .75rem;
+      font-weight: 600;
+    }
+
+    h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(3.3rem, 8vw, 6.8rem);
+      line-height: 1.04;
+      font-weight: 500;
+      margin: 24px 0;
+    }
+
+    h1 em { color: var(--gold); font-weight: 400; }
+
+    .hero p { color: #d0c5b6; max-width: 430px; margin-bottom: 32px; }
+
+    .button {
+      display: inline-block;
+      background: var(--gold);
+      color: #17130f;
+      padding: 14px 24px;
+      font-weight: 700;
+      font-size: .85rem;
+      transition: .25s;
+    }
+
+    .button:hover { background: var(--cream); transform: translateY(-2px); }
+
+    .section { padding: 100px 8%; }
+
+    .section-heading { margin-bottom: 42px; }
+
+    h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 500;
+      margin-top: 12px;
+    }
+
+    .intro {
+      color: var(--muted);
+      max-width: 550px;
+      margin-top: 14px;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .menu-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      transition: .3s;
+    }
+
+    .menu-card:hover { transform: translateY(-6px); border-color: var(--gold); }
+
+    .menu-card img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .menu-info { padding: 24px; }
+
+    .menu-info h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 1.4rem;
+      font-weight: 500;
+    }
+
+    .menu-info p { color: var(--muted); font-size: .9rem; margin: 8px 0 16px; }
+
+    .price { color: var(--gold); font-weight: 700; }
+
+    .story {
+      background: #1b1916;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .story img {
+      width: 100%;
+      height: 440px;
+      object-fit: cover;
+    }
+
+    .story p { color: var(--muted); margin: 20px 0; }
+
+    .contact { text-align: center; }
+
+    .contact .intro { margin: 14px auto 30px; }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 8%;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: .8rem;
+    }
+
+    @media (max-width: 760px) {
+      .nav { padding: 20px 6%; }
+      .nav-links { gap: 14px; font-size: .75rem; }
+      .logo { font-size: 1.2rem; letter-spacing: 3px; }
+      .hero { min-height: 75vh; padding: 75px 6%; }
+      .section { padding: 70px 6%; }
+      .menu-grid { grid-template-columns: 1fr; }
+      .menu-card img { height: 260px; }
+      .story { grid-template-columns: 1fr; gap: 28px; }
+      .story img { height: 300px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="nav">
+    <a class="logo" href="#">NOIR<span>.</span></a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#menu">Menu</a>
+      <a href="#story">Our Story</a>
+      <a href="#contact">Visit Us</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <span class="eyebrow">Coffee, thoughtfully crafted</span>
+        <h1>Slow down.<br>Drink it <em>in.</em></h1>
+        <p>Exceptional coffee, intimate spaces, and little moments that make the everyday feel extraordinary.</p>
+        <a class="button" href="#menu">EXPLORE OUR MENU ↗</a>
+      </div>
+    </section>
+
+    <section class="section" id="menu">
+      <div class="section-heading">
+        <span class="eyebrow">Made with intention</span>
+        <h2>Your new daily ritual.</h2>
+        <p class="intro">Thoughtfully sourced beans, carefully crafted drinks, and something delicious for every mood.</p>
+      </div>
+
+      <div class="menu-grid">
+        <article class="menu-card">
+          <img src="https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?auto=format&fit=crop&w=800&q=80" alt="Freshly prepared espresso coffee" loading="lazy">
+          <div class="menu-info">
+            <h3>Velvet Espresso</h3>
+            <p>Rich, smooth, beautifully balanced.</p>
+            <span class="price">₹149</span>
+          </div>
+        </article>
+
+        <article class="menu-card">
+          <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=800&q=80" alt="Creamy iced coffee in a glass" loading="lazy">
+          <div class="menu-info">
+            <h3>Midnight Cold Brew</h3>
+            <p>Slow-steeped, chilled, refreshingly bold.</p>
+            <span class="price">₹199</span>
+          </div>
+        </article>
+
+        <article class="menu-card">
+          <img src="https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?auto=format&fit=crop&w=800&q=80" alt="Latte with delicate milk foam" loading="lazy">
+          <div class="menu-info">
+            <h3>Golden Latte</h3>
+            <p>Silky milk with our signature espresso.</p>
+            <span class="price">₹179</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section story" id="story">
+      <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=1000&q=85" alt="Barista preparing freshly brewed coffee" loading="lazy">
+      <div>
+        <span class="eyebrow">A little about us</span>
+        <h2>Not just coffee.<br>A feeling.</h2>
+        <p>We believe the best moments aren't rushed. They're found in a familiar corner, a warm cup, and conversations that last a little longer.</p>
+        <p>NOIR is a concept café celebrating good coffee and even better company.</p>
+        <a class="button" href="#contact">COME SAY HELLO ↗</a>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <span class="eyebrow">Your table is waiting</span>
+      <h2>Make yourself at home.</h2>
+      <p class="intro">Have a question, planning a visit, or just want to talk coffee? We'd love to hear from you.</p>
+      <a class="button" href="mailto:hello@example.com?subject=Hello%20NOIR%20Cafe">GET IN TOUCH ↗</a>
+    </section>
+  </main>
+
+  <footer>
+    <a class="logo" href="#">NOIR<span>.</span></a>
+    <p>© 2026 NOIR CAFÉ · Demo concept website</p>
+    <p>Made for the love of coffee.</p>
+  </footer>
+</body>
+</html>
+
